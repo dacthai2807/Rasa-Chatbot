@@ -1,0 +1,78 @@
+version: "2.0"
+stories:
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- story: thankyou
+  steps:
+  - intent: thankyou
+  - action: utter_noworries
+- story: ask_ability
+  steps:
+  - intent: ask_ability
+  - action: utter_show_ability
+- story: praise
+  steps:
+  - intent: praise
+  - action: utter_happy
+- story: decry
+  steps:
+  - intent: decry
+  - action: utter_sorry
+- story: fallback
+  steps:
+  - intent: fallback
+  - action: utter_fallback
+- story: ask_for_hospital
+  steps:
+  - intent: ask_for_hospital
+  - action: utter_show_hospital
+- story: ask_for_hospital_address
+  steps:
+  - intent: ask_for_hospital_address
+  - action: utter_show_hospital_address
+- story: ask_for_hospital_hotline
+  steps:
+  - intent: ask_for_hospital_hotline
+  - action: utter_show_hospital_hotline
+- story: ask_for_hospital_overview
+  steps:
+  - intent: ask_for_hospital_overview
+  - action: utter_show_hospital_overview
+- story: ask_for_business_hours
+  steps:
+  - intent: ask_for_business_hours
+  - action: utter_business_hours
+- story: ask_for_blurred_vision_from_distance
+  steps:
+  - intent: ask_for_blurred_vision_from_distance
+  - action: utter_ans_for_blurred_vision_from_distance
+- story: ask_for_eye_diseases
+  steps:
+  - intent: ask_for_eye_diseases
+  - action: utter_ans_for_eye_diseases
+- story: ask_for_dry_eye_disease
+  steps:
+  - intent: ask_for_dry_eye_disease
+  - action: utter_ans_for_dry_eye_disease
+- story: ask_for_refractive_error
+  steps:
+  - intent: ask_for_refractive_error
+  - action: utter_ans_for_refractive_error
+- story: ask_for_retinal_disease
+  steps:
+  - intent: ask_for_retinal_disease
+  - action: utter_ans_for_retinal_disease
+- story: ask_for_elevated_intraocular_pressure
+  steps:
+  - intent: ask_for_elevated_intraocular_pressure
+  - action: utter_ans_for_elevated_intraocular_pressure
+- story: ask_for_eye_allergy
+  steps:
+  - intent: ask_for_eye_allergy
+  - action: utter_ans_for_eye_allergy

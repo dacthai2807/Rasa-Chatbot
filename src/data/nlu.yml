@@ -1,0 +1,157 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - xin chào
+    - chào bạn
+    - hello bạn
+    - hi bạn
+    - Bạn ơi, cho mình hỏi
+    - bot ơi
+    - cho mình hỏi chút
+    - hey
+    - mình có vài câu hỏi
+    - có ai giúp mình không
+    - bạn ơi
+    - anh ơi
+    - chị ơi
+    - cháu ơi
+    - có ai ở đây không?
+- intent: goodbye
+  examples: |
+    - hẹn gặp lại
+    - good bye
+    - bye bye
+    - tạm biệt bạn
+    - tạm biệt bot nhá
+    - pp
+- intent: ask_ability
+  examples: |
+    - bạn có thể làm những gì nhỉ
+    - bạn có chức năng gì?
+    - bạn giúp gì được mình không?
+    - bạn có thể giúp gì cho mình?
+    - bạn biết làm gì?
+    - bạn hỗ trợ mình như thế nào?
+    - cho mình xem các chức năng của bạn
+- intent: thankyou
+  examples: |
+    - cảm ơn bạn nhá
+    - thanks bạn nha
+    - cảm ơn nha
+    - good job
+    - thank you
+    - cảm ơn bot nha
+    - thanks bot
+    - cảm ơn
+    - thank you so much
+    - great! Thanks
+    - ok
+    - okii
+    - ukm
+    - uk
+    - oke
+    - Ô kê
+- intent: praise
+  examples: |
+    - bot giỏi quá
+    - great
+    - awesome
+    - bot làm tốt lắm
+    - ui giỏi thế
+    - bot thông minh
+    - đẹp trai đấy
+    - Ênm đệnp léăm
+- intent: decry
+  examples: |
+    - quá tệ
+    - ngu ngốc
+    - chả biết gì cả
+    - ngu thật
+    - dở ghê
+    - có thế mà cũng không biết
+    - kém cỏi
+    - non
+    - gà vl
+- intent: ask_for_hospital
+  examples: |
+    - bệnh viện
+    - bệnh viện mắt
+    - bot có biết bệnh viện mắt nào tốt không
+    - nên chữa bệnh về mắt ở đâu nhỉ
+    - viện mắt
+    - đến bệnh viện nào bây giờ
+    - chọn giúp mình một bệnh viện mắt
+- intent: ask_for_business_hours
+  examples: |
+    - bao giờ bệnh viện mở cửa
+    - giờ làm việc của bệnh viện
+    - thời gian làm việc
+    - giờ hành chính
+- intent: ask_for_hospital_address
+  examples: |
+    - địa chỉ
+    - bệnh viện ở đâu
+    - địa chỉ của bệnh viện là gì
+    - bệnh viện ở chỗ nào
+    - bệnh viện này nằm ở đâu
+- intent: ask_for_hospital_hotline
+  examples: |
+    - hotline
+    - sđt của bệnh viện là gì
+    - sđt bệnh viện
+    - liên hệ
+    - số điện thoại liên lạc của bệnh viện là gì
+- intent: ask_for_hospital_overview
+  examples: |
+    - giới thiệu về bệnh viện
+    - tại sao bệnh viện ánh sáng lại tốt
+    - tại sao chọn bệnh viện mắt ánh sáng
+    - lý do bệnh viện ánh sáng tốt
+- intent: ask_for_blurred_vision_from_distance
+  examples: |
+    - mắt nhìn xa bị nhòe có nguy hiểm không
+    - mắt nhìn xa bị nhòe
+    - mắt nhìn xa bị mờ
+    - mình nhìn xa bị mờ mắt có sao không
+- intent: ask_for_eye_diseases
+  examples: |
+    - đau mắt quá
+    - tôi bị đau mắt
+    - bạn có thể tư vấn giúp mình về những bệnh nào
+    - những căn bệnh về mắt
+    - những căn bệnh thường gặp ở mắt
+    - bệnh của mắt
+    - bệnh phổ biến của mắt
+    - bạn biết những bệnh phổ biến về mắt nào
+- intent: ask_for_dry_eye_disease
+  examples: |
+    - bệnh khô mắt
+    - mắt mình bị khô quá
+    - mắt khô là bệnh gì
+    - mắt khô có nguy hiểm không
+    - giải pháp để mắt hết khô
+    - chữa bệnh mắt khô
+- intent: ask_for_refractive_error
+  examples: |
+    - cận thị
+    - viễn thị
+    - loạn thị
+    - mắt mờ
+    - tật khúc xạ
+- intent: ask_for_retinal_disease
+  examples: |
+    - bệnh võng mạc
+    - thị lực bị giảm dần cho đến mất hẳn thị lực
+    - bong võng mạc
+- intent: ask_for_elevated_intraocular_pressure
+  examples: |
+    - tăng nhãn áp
+    - mắt mình nhìn mờ như có lớp sương mù
+    - mắt sưng, đau, đỏ, căng cứng
+    - đồng tử mờ đục
+    - con ngươi mờ đục
+- intent: ask_for_eye_allergy
+  examples: |
+    - mắt bị dị ứng
+    - dị ứng mắt
