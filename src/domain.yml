@@ -5,6 +5,12 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- fallback:
+    use_entities: true
+- action_default_fallback:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 - greet:
     use_entities: true
 - goodbye:
@@ -15,123 +21,101 @@ intents:
     use_entities: true
 - decry:
     use_entities: true
-- ask_for_lunch:
+- ask_for_general_eye_examination_service:
     use_entities: true
-- ask_ability:
+- ask_for_getting_ready_to_go_to_hospital:
     use_entities: true
-- ask_for_hospital:
+- ask_for_cost_of_general_examination_service:
     use_entities: true
-- ask_for_business_hours:
+- ask_for_old_enough_for_refractive_surgery:
     use_entities: true
-- ask_for_hospital_hotline:
+- ask_for_method_for_nearsighted:
     use_entities: true
-- ask_for_hospital_address:
+- ask_for_safe_method_for_refractive_surgery:
     use_entities: true
-- ask_for_hospital_overview:
+- ask_for_recovery_time_after_refractive_surgery:
     use_entities: true
-- ask_for_blurred_vision_from_distance:
+- ask_for_old_enough_for_cataract_surgery:
     use_entities: true
-- ask_for_eye_diseases:
+- ask_for_safe_method_for_cataract_surgery:
     use_entities: true
-- ask_for_refractive_error:
+- ask_for_recovery_time_after_cataract_surgery:
     use_entities: true
-- ask_for_elevated_intraocular_pressure:
-    use_entities: true
-- ask_for_retinal_disease:
-    use_entities: true
-- ask_for_dry_eye_disease:
-    use_entities: true
-- ask_for_eye_allergy:
-    use_entities: true
-- fallback:
-    use_entities: true
-- action_default_fallback:
-    use_entities: true
-- nlu_fallback:
+- service:
     use_entities: true
 entities: []
-slots:
-  hospital:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: false
+slots: {}
 responses:
-  utter_greet:
-  - text: Chào bạn. Mình là chatbot được thiết kế để tư vấn cho bạn các bệnh về mắt ạ.
-  utter_sorry:
-  - text: Mình xin lỗi vì người tạo ra mình chưa đủ thông minh ạ =(((
-  utter_noworries:
-  - text: Mình luôn sẵn lòng giúp đỡ bạn bất cứ lúc nào ạ ^^
-  utter_show_ability:
-  - text: Mình có thể trò chuyện với bạn, thi thoảng có thể tư vấn cho bạn để giúp bạn có đôi mắt sáng khỏe ạ.
   utter_fallback:
-  - text: Xin lỗi, mình chưa hiểu ý muốn của bạn ạ. Bạn có thể nói lại được không ạ?
+  - text: Xin lỗi, em vẫn chưa hiểu ý anh/ chị muốn nói.
+  utter_greet:
+  - text: Bệnh viện mắt Ánh sáng xin chào, em có thể giúp được gì cho anh/chị.
+  utter_sorry:
+  - text: Xin lỗi vì không đáp ứng được nhu cầu của anh/ chị.
+  utter_noworries:
+  - text: Bệnh viện mắt Ánh sáng luôn sẵn lòng giúp đỡ anh/ chị.
   utter_happy:
-  - text: Hì hì, bạn khen quá lời rồi ạ ^^
+  - text: Bệnh viện mắt Ánh sáng luôn sẵn lòng giúp đỡ anh/ chị.
   utter_goodbye:
-  - image: https://i.imgur.com/RDtu2Xg.jpeg
-    text: Hẹn gặp lại bạn nhé!
-  utter_do_not_know_hospital:
-  - text: Bạn đang nói đến bệnh viện mắt nào vậy ạ? Nếu bạn chưa biết nên đến bệnh viện nào thì mình có một đề cử đấy ạ.
-  utter_show_hospital:
-  - image: https://i.imgur.com/SNIhRqu.png
-    text: '[Bệnh viện mắt Ánh Sáng](https://matanhsang.com/) là một trong những bệnh viện mắt tốt nhất ở Hà Nội đấy ạ.'
-  utter_show_hospital_hotline:
-  - text: Bạn có thể liên lạc với bệnh viện qua số điện thoại (024) 2240 1011 ạ.
-  utter_show_hospital_address:
-  - text: Bạn có thể đến bệnh viện mắt Ánh Sáng ở [số 2 ngõ 208 phố Trần Cung - Cổ Nhuế 1 - Bắc Từ Liêm - Hà Nội](https://www.google.com/maps/place/B%E1%BB%87nh+Vi%E1%BB%87n+M%E1%BA%AFt+%C3%81nh+S%C3%A1ng/@21.0512186,105.7881816,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ab2ef937270f:0x67778f8f72fce418!8m2!3d21.0512136!4d105.7903703) ạ.
-  utter_business_hours:
-  - text: Thời gian làm việc của bệnh viện từ thứ 3 - sáng thứ 6 là 9:00-12:00/14:00-18:00 và từ thứ 7 - sáng chủ nhật là 9:00-12:00/14:00-17:00. Bệnh viện nghỉ vào thứ 2 và các ngày lễ ạ.
-  utter_show_hospital_overview:
-  - text: Bệnh viện mắt Ánh sáng luôn dẫn đầu ngành Mắt bằng cách ứng dụng những kỹ thuật tiên tiến, có chất lượng y khoa chuẩn mực, nơi làm việc thân thiện, năng động và môi trường luôn học tập tiến bộ cho các bác sĩ điều dưỡng và mọi nhân viên, nhằm đưa lại kết quả điều trị tốt nhất. Ngoài ra, bệnh viện còn có đội ngũ bác sĩ tư vấn trực tuyến 14/24h giúp bạn tiết kiệm được thời gian và chi phí. Sau quá trình chữa bệnh, bác sĩ điều trị sẽ tư vấn cho bạn cách chăm sóc sức khỏe tốt nhất, phòng tránh bệnh tái phát.
-  utter_ans_for_blurred_vision_from_distance:
-  - text: Thông thường, khi mắt nhìn xa bị nhòe có thể do các nguyên nhân như do chứng rối loạn nội tiết, viêm màng bồ đào, viêm kết mạc, đục thủy tinh thể, cận thị, bong võng mạc, đột quỵ, đau nửa đầu hoặc một số nguyên nhân ít phổ biến hơn như là xuất huyết tiền phòng, loét giác mạc, viêm củng mạc, khô mắt, vẩn đục dịch kính.
-  utter_ans_for_eye_diseases:
-  - text: Mình có thể tư vấn cho bạn các bệnh về mắt phổ biến như bệnh khô mắt, các tật khúc xạ, bệnh về võng mạc, tăng nhãn áp và dị ứng mắt ạ.
-  utter_ans_for_dry_eye_disease:
-  - image: https://i.imgur.com/ksh1tsS.jpeg
-    text: |-
-      Bệnh khô mắt xuất hiện khi có các dấu hiệu như khó chịu ở mắt, chớp mắt liên tục, chảy nước mắt, … Khi mắt bị khô dịch vị tiết ra ít hơn khiến vi khuẩn dễ dàng bám vào và gây bệnh. Bệnh này thường xuất hiện ở những người làm việc ở văn phòng hoăc những người ở độ tuổi trung niên. Người làm văn phòng thường xuyên ngồi trong phòng máy lạnh không chỉ làm cho da khô mà cũng khiến cho mắt dễ rơi vào tình trạng bị khô. Ngoài ra với những người này họ thường xuyên phải tiếp xúc với máy tính, mắt thường phải tập trung cao độ, ít chú ý đến việc chớp mắt cũng là nguyên nhân dẫn tới khô mắt.Ở độ tuổi trung niên thì  nguyên nhân dẫn đến khô mắt thường là do nội tiết tố trong cơ thể giảm sút khiến cho mắt bị khô.
-      Giải pháp để phòng và điều trị khô mắt là uống nhiều nước, thường xuyên chớp mắt hoặc có thể nhỏ thuốc mắt.
-  utter_ans_for_refractive_error:
-  - image: https://i.imgur.com/HiVDetO.jpeg
-    text: Tật khúc xạ là một bệnh gây rối loạn mắt, khi mắt không thể tập trung rõ ràng các hình ảnh mắt thu về. Có ba tật khúc xạ của mắt là cận thị, viễn thị và loạn thị. Bạn có thể điều chỉnh các tật khúc xạ bằng việc đeo kính gọng hoặc kính áp tròng. Đối với những bệnh nhân từ 18 tuổi trở lên có đủ điều kiện theo quy định còn có thể điều trị cận thị thông qua phẫu thuật.
-  utter_ans_for_retinal_disease:
+  - text: Cảm ơn anh/ chị đã quan tâm đến dịch vụ của bệnh viện mắt Ánh sáng.
+  utter_rep_for_general_eye_examination_service:
   - text: |-
-      Đối tượng của các bệnh về võng mạc thường là phụ nữ từng phẫu thuật đục nhãn mắt hoặc gia đình có tiền sử về bệnh võng mạc hoặc phụ nữ bị cận thị nặng. Riêng với bệnh màng lưới nó chỉ xảy ra với những người bị tiểu đường.
-      Nguyên nhân của chứng tách võng mạc là do dịch lỏng tràn vào các hố hoặc nước mắt bên trong võng mạc làm chia tách nó khỏi các lớp phía dưới của mắt. Võng mạc bị tách ra sẽ làm cho thị lực ở mắt yếu dần hoặc bị mất hoàn toàn. Bệnh màng lưới do tiểu đường là hậu quả do bệnh tiểu đường hủy hoại các mạch máu li ti bên trong võng mạc có thể dẫn đến mù loà.
-      Để điều trị bệnh tách võng mạc người ta thường tiến hành phẫu thuật, dùng đá lạnh chữa bệnh hoặc tia laser photocoagulation. Đối với bệnh màng lưới do tiểu đường thường dùng tia Laser photocoagulation và phẫu thuật vitrectomy để điều trị
-  utter_ans_for_elevated_intraocular_pressure:
-  - image: https://i.imgur.com/Z9hLg4H.jpeg
-    text: |-
-      Tăng nhãn áp thường gặp ở người trung niên và người già. Đây là căn bệnh khá nguy hiểm ở mắt do sự gia tăng về áp lực dịch lỏng trong nhãn cầu dần dần sẽ phá hủy các dây thần kinh thị giác, ở mức độ cao nó còn có thể dẫn đến mù loà.
-      Nguyên nhân chính gây ra bệnh tăng nhãn áp là do sự mất cân bằng giữa việc sản xuất và rút thoát chất dịch lỏng trong nhãn cầu.
-      Các phương pháp điều trị hiện nay là nhỏ thuốc mắt hoặc uống thuốc đối với những bệnh nhân mới mắc bệnh hoặc phẫu thuật mắt đối với những người bệnh nặng
-  utter_ans_for_eye_allergy:
-  - image: https://i.imgur.com/0vKRuFf.jpeg
-    text: |-
-      Biểu hiện của dị ứng mắt là ngứa mắt, chảy nước mắt liên tục khiến  khó làm việc và nếu dị ứng nặng có thể gây viêm loét giác mạc.
-      Tùy thuộc từng loại dị ứng ở mắt sẽ có những cách chữa trị riêng. Tuy nhiên người bệnh nên tránh đừng để bụi dị ứng vào mắt. Không nên dùng tay dụi mắt mà thay vào đó là  rửa mắt bằng nước lạnh, nước muối sinh lý, nước mắt nhân tạo. Chườm lạnh để giảm phù mi, giảm ngứa và kích thích do làm co mạch và ổn định màng tế bào có chức năng miễn dịch.
+      Dịch vụ khám mắt tổng quát tại bệnh viện mắt Ánh sáng gồm các dịch vụ khám chuyên sâu, các xét nghiệm chuẩn đoán hình ảnh quan trọng như chụp hình đáy mắt, siêu âm mắt,... 
+      Anh/chị có thể xem thêm chi tiết tại link: [*Khám mắt toàn diện*](https://www.matsaigon.com/kham-mat-toan-dien/).
+  utter_rep_for_getting_ready_to_go_to_hospital:
+  - text: |-
+      Khi đi khám anh/chị vui lòng đến một trong các [cơ sở của hệ thống bệnh viện](https://www.matsaigon.com/ve-chung-toi/he-thong-benh-vien/), tại quầy lễ tân anh/chị sẽ được hướng dẫn cụ thể. 
+      Ngoài ra để không phải chờ đợi lâu, anh/chị có thể đặt lịch trước dịch vụ tại link: [*Đặt lịch khám bệnh*](https://www.matsaigon.com/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjM4NzAiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D).
+  utter_rep_for_cost_of_general_examination_service:
+  - text: Đối với dịch vụ khám tổng quát, trọn gói dịch vụ tại bệnh viện chưa bao gồm chi phí thuốc thang là 2tr500k, ngoài ra khi anh/chị có nhu cầu làm thêm các xét nghiệm không được bao gồm trong gói dịch vụ thì chi phí sẽ được tính riêng ạ.
+  utter_service:
+  - text: |-
+      Các dịch vụ gồm có: 
+      - Khám mắt
+      - Phẫu thuật ghép giác mạc
+      - Phẫu thuật khúc xạ
+      - Phẫu thuật đục thủy tinh thể
+      - Tạo hình thẩm mỹ:
+          + Phẫu thuật sụp mí 
+          + Phẫu thuật mí đôi
+          + Phẫu thuật bọng mỡ mắt
+          + Phẫu thuật hở mi
+      - Nhãn nhi, điều trị lác lé:
+          + Kính áp tròng chỉnh hình giác mạc
+          + Phẫu thuật lác/lé
+          + Nhược thị
+      - Phẫu thuật cườm nước
+      - Phẫu thuật cườm khô
+      - Điều trị cận thị/ viễn thị/ loạn thị
+      - Phẫu thuật khúc xạ
+  utter_rep_for_old_enough_for_refractive_surgery:
+  - text: Để có thể phẫu thuật khúc xạ cần đủ 18 tuổi trở lên để đảm bảo nhãn cầu có cấu trúc tương đối ổn định. Ngoài ra còn có một số yêu cầu khác như ổn định độ khúc xạ, không bị mắc các bệnh về mắt, giác mạc không bị sẹo, ...
+  utter_rep_for_method_for_nearsighted:
+  - text: 'Hiện nay có rất nhiều phương pháp phẫu thuật khúc xạ hiện đại, tại bệnh viện mắt Ánh sáng bạn có thể lựa chọn các phương pháp như: phẫu thuật lasik, phương pháp relex smile (phương pháp tiên tiến nhất hiện nay), phương pháp femtosecond lasik, ...'
+  utter_rep_for_safe_method_for_refractive_surgery:
+  - text: Phương pháp relex smile hiện là phương pháp an toàn và tiên tiến nhất hiện nay, đây cũng là phương pháp được rất nhiều bệnh nhận lựa chọn tại bệnh viện mắt Ánh sáng.
+  utter_rep_for_recovery_time_after_refractive_surgery:
+  - text: Hầu hết các loại phẫu thuật có thời gian hồi phục khá nhanh, bệnh nhân chỉ cần nghỉ ngơi trong vòng 1-2 tiếng và thực hiện theo chỉ dẫn của bác sĩ sau khi phẫu thuật như không gội đầu trong vòng 24 tiếng, không xem ti vi, điện thoại quá nhiều, không bơi trong 1 tháng, ...
+  utter_rep_for_old_enough_for_cataract_surgery:
+  - text: Không có độ tuổi quy định để có thể phẫu thuật đục thủy tinh thể. Tuy nhiên, còn có một số yêu cầu khác như không có các bệnh toàn thân cấp tính, bệnh nhân không có các viêm nhiễm cấp tính tại mắt, ...
+  utter_rep_for_safe_method_for_cataract_surgery:
+  - text: Phương pháp phẫu thuật [phacoemusification](https://www.matsaigon.com/phau-thuat-phaco/) (kỹ thuật mổ Phaco) là một phương pháp phẫu thuật chữa bệnh đục thủy tinh thể thể an toàn, hiệu quả và tiên tiến nhất hiện nay.
+  utter_rep_for_recovery_time_after_cataract_surgery:
+  - text: Hầu hết các loại phẫu thuật có thời gian hồi phục khá nhanh, bệnh nhân chỉ cần nghỉ ngơi trong vòng 1-2 tiếng và thực hiện theo chỉ dẫn của bác sĩ sau khi phẫu thuật như không gội đầu trong vòng 24 tiếng, không xem ti vi, điện thoại quá nhiều, không bơi trong 1 tháng, ...
 actions:
 - utter_greet
-- utter_happy
-- utter_goodbye
 - utter_sorry
 - utter_noworries
-- utter_show_ability
 - utter_fallback
-- utter_show_hospital
-- utter_business_hours
-- utter_show_hospital_address
-- utter_show_hospital_hotline
-- utter_show_hospital_overview
-- utter_ans_for_blurred_vision_from_distance
-- utter_ans_for_eye_diseases
-- utter_ans_for_dry_eye_disease
-- utter_ans_for_refractive_error
-- utter_ans_for_retinal_disease
-- utter_ans_for_elevated_intraocular_pressure
-- utter_ans_for_eye_allergy
+- utter_happy
+- utter_goodbye
+- utter_rep_for_general_eye_examination_service
+- utter_rep_for_getting_ready_to_go_to_hospital
+- utter_rep_for_cost_of_general_examination_services
+- utter_service
+- utter_rep_for_old_enough_for_refractive_surgery
+- utter_rep_for_method_for_nearsighted
+- utter_rep_for_safe_method_for_refractive_surgery
+- utter_rep_for_recovery_time_after_refractive_surgery
 forms: {}
 e2e_actions: []

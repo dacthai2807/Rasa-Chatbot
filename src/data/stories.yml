@@ -1,5 +1,9 @@
 version: "2.0"
 stories:
+- story: fallback
+  steps:
+  - intent: fallback
+  - action: utter_fallback
 - story: greet
   steps:
   - intent: greet
@@ -12,10 +16,6 @@ stories:
   steps:
   - intent: thankyou
   - action: utter_noworries
-- story: ask_ability
-  steps:
-  - intent: ask_ability
-  - action: utter_show_ability
 - story: praise
   steps:
   - intent: praise
@@ -24,55 +24,45 @@ stories:
   steps:
   - intent: decry
   - action: utter_sorry
-- story: fallback
+- story: ask_for_general_eye_examination_service
   steps:
-  - intent: fallback
-  - action: utter_fallback
-- story: ask_for_hospital
+  - intent: ask_for_general_eye_examination_service
+  - action: utter_rep_for_general_eye_examination_service
+- story: ask_for_getting_ready_to_go_to_hospital
   steps:
-  - intent: ask_for_hospital
-  - action: utter_show_hospital
-- story: ask_for_hospital_address
+  - intent: ask_for_getting_ready_to_go_to_hospital
+  - action: utter_rep_for_getting_ready_to_go_to_hospital
+- story: ask_for_cost_of_general_examination_service
   steps:
-  - intent: ask_for_hospital_address
-  - action: utter_show_hospital_address
-- story: ask_for_hospital_hotline
+  - intent: ask_for_cost_of_general_examination_service
+  - action: utter_rep_for_cost_of_general_examination_service
+  - action: utter_service
+- story: service
   steps:
-  - intent: ask_for_hospital_hotline
-  - action: utter_show_hospital_hotline
-- story: ask_for_hospital_overview
+  - intent: service
+  - action: utter_service
+
+- story: ask_for_refractive_surgery
   steps:
-  - intent: ask_for_hospital_overview
-  - action: utter_show_hospital_overview
-- story: ask_for_business_hours
+  - intent: ask_for_old_enough_for_refractive_surgery
+  - action: utter_rep_for_old_enough_for_refractive_surgery
+
+  - intent: ask_for_method_for_nearsighted
+  - action: utter_rep_for_method_for_nearsighted
+
+  - intent: ask_for_safe_method_for_refractive_surgery
+  - action: utter_rep_for_safe_method_for_refractive_surgery
+
+  - intent: ask_for_recovery_time_after_refractive_surgery
+  - action: utter_rep_for_recovery_time_after_refractive_surgery
+
+- story: ask_for_cataract_surgery
   steps:
-  - intent: ask_for_business_hours
-  - action: utter_business_hours
-- story: ask_for_blurred_vision_from_distance
-  steps:
-  - intent: ask_for_blurred_vision_from_distance
-  - action: utter_ans_for_blurred_vision_from_distance
-- story: ask_for_eye_diseases
-  steps:
-  - intent: ask_for_eye_diseases
-  - action: utter_ans_for_eye_diseases
-- story: ask_for_dry_eye_disease
-  steps:
-  - intent: ask_for_dry_eye_disease
-  - action: utter_ans_for_dry_eye_disease
-- story: ask_for_refractive_error
-  steps:
-  - intent: ask_for_refractive_error
-  - action: utter_ans_for_refractive_error
-- story: ask_for_retinal_disease
-  steps:
-  - intent: ask_for_retinal_disease
-  - action: utter_ans_for_retinal_disease
-- story: ask_for_elevated_intraocular_pressure
-  steps:
-  - intent: ask_for_elevated_intraocular_pressure
-  - action: utter_ans_for_elevated_intraocular_pressure
-- story: ask_for_eye_allergy
-  steps:
-  - intent: ask_for_eye_allergy
-  - action: utter_ans_for_eye_allergy
+  - intent: ask_for_old_enough_for_cataract_surgery
+  - action: utter_rep_for_old_enough_for_cataract_surgery
+
+  - intent: ask_for_safe_method_for_cataract_surgery
+  - action: utter_rep_for_safe_method_for_cataract_surgery
+
+  - intent: ask_for_recovery_time_after_cataract_surgery
+  - action: utter_rep_for_recovery_time_after_cataract_surgery

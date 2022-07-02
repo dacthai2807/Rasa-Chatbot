@@ -25,15 +25,6 @@ nlu:
     - tạm biệt bạn
     - tạm biệt bot nhá
     - pp
-- intent: ask_ability
-  examples: |
-    - bạn có thể làm những gì nhỉ
-    - bạn có chức năng gì?
-    - bạn giúp gì được mình không?
-    - bạn có thể giúp gì cho mình?
-    - bạn biết làm gì?
-    - bạn hỗ trợ mình như thế nào?
-    - cho mình xem các chức năng của bạn
 - intent: thankyou
   examples: |
     - cảm ơn bạn nhá
@@ -73,85 +64,48 @@ nlu:
     - kém cỏi
     - non
     - gà vl
-- intent: ask_for_hospital
+- intent: ask_for_general_eye_examination_service
   examples: |
-    - bệnh viện
-    - bệnh viện mắt
-    - bot có biết bệnh viện mắt nào tốt không
-    - nên chữa bệnh về mắt ở đâu nhỉ
-    - viện mắt
-    - đến bệnh viện nào bây giờ
-    - chọn giúp mình một bệnh viện mắt
-- intent: ask_for_business_hours
+    - dịch vụ khám mắt tổng quát
+- intent: ask_for_getting_ready_to_go_to_hospital
   examples: |
-    - bao giờ bệnh viện mở cửa
-    - giờ làm việc của bệnh viện
-    - thời gian làm việc
-    - giờ hành chính
-- intent: ask_for_hospital_address
+    - việc cần làm trước khi đi khám
+    - khi đi khám cần những gì
+    - cần chuẩn bị gì khi đi khám
+- intent: ask_for_cost_of_general_examination_service
   examples: |
-    - địa chỉ
-    - bệnh viện ở đâu
-    - địa chỉ của bệnh viện là gì
-    - bệnh viện ở chỗ nào
-    - bệnh viện này nằm ở đâu
-- intent: ask_for_hospital_hotline
+    - chi phí dịch vụ khám tổng quát hết bao nhiêu tiền
+    - chi phí dịch vụ khám tổng quát là bao nhiêu vậy
+- intent: service
   examples: |
-    - hotline
-    - sđt của bệnh viện là gì
-    - sđt bệnh viện
-    - liên hệ
-    - số điện thoại liên lạc của bệnh viện là gì
-- intent: ask_for_hospital_overview
+    - bệnh viện có những dịch vụ gì
+    - các dịch vụ của bệnh viện
+- intent: ask_for_old_enough_for_refractive_surgery
   examples: |
-    - giới thiệu về bệnh viện
-    - tại sao bệnh viện ánh sáng lại tốt
-    - tại sao chọn bệnh viện mắt ánh sáng
-    - lý do bệnh viện ánh sáng tốt
-- intent: ask_for_blurred_vision_from_distance
+    - đối tượng có thể phẫu thuật khúc xạ
+    - bao nhiêu tuổi thì có thể phẫu thuật khúc xạ
+- intent: ask_for_method_for_nearsighted
   examples: |
-    - mắt nhìn xa bị nhòe có nguy hiểm không
-    - mắt nhìn xa bị nhòe
-    - mắt nhìn xa bị mờ
-    - mình nhìn xa bị mờ mắt có sao không
-- intent: ask_for_eye_diseases
+    - cận thị cần phẫu thuật gì được
+    - cận thị thì phẫu thuật gì
+- intent: ask_for_safe_method_for_refractive_surgery
   examples: |
-    - đau mắt quá
-    - tôi bị đau mắt
-    - bạn có thể tư vấn giúp mình về những bệnh nào
-    - những căn bệnh về mắt
-    - những căn bệnh thường gặp ở mắt
-    - bệnh của mắt
-    - bệnh phổ biến của mắt
-    - bạn biết những bệnh phổ biến về mắt nào
-- intent: ask_for_dry_eye_disease
+    - phương pháp phẫu thuật khúc xạ nào là an toàn nhất
+    - phương pháp an toàn nhất để phẫu thuật khúc xạ
+- intent: ask_for_recovery_time_after_refractive_surgery
   examples: |
-    - bệnh khô mắt
-    - mắt mình bị khô quá
-    - mắt khô là bệnh gì
-    - mắt khô có nguy hiểm không
-    - giải pháp để mắt hết khô
-    - chữa bệnh mắt khô
-- intent: ask_for_refractive_error
+    - phẫu thuật khúc xạ xong hồi phục mất bao lâu
+    - thời gian hồi phục sau phẫu thuật khúc xạ
+
+- intent: ask_for_old_enough_for_cataract_surgery
   examples: |
-    - cận thị
-    - viễn thị
-    - loạn thị
-    - mắt mờ
-    - tật khúc xạ
-- intent: ask_for_retinal_disease
+    - đối tượng có thể phẫu thuật đục thuỷ tinh thể
+    - bao nhiêu tuổi thì có thể phẫu thuật đục thuỷ tinh thể
+- intent: ask_for_safe_method_for_cataract_surgery
   examples: |
-    - bệnh võng mạc
-    - thị lực bị giảm dần cho đến mất hẳn thị lực
-    - bong võng mạc
-- intent: ask_for_elevated_intraocular_pressure
+    - phương pháp phẫu thuật đục thuỷ tinh thể nào là an toàn nhất
+    - phương pháp an toàn nhất để phẫu thuật đục thuỷ tinh thể
+- intent: ask_for_recovery_time_after_cataract_surgery
   examples: |
-    - tăng nhãn áp
-    - mắt mình nhìn mờ như có lớp sương mù
-    - mắt sưng, đau, đỏ, căng cứng
-    - đồng tử mờ đục
-    - con ngươi mờ đục
-- intent: ask_for_eye_allergy
-  examples: |
-    - mắt bị dị ứng
-    - dị ứng mắt
+    - thời gian hồi phục sau phẫu thuật đục thủy tinh thể
+    - phẫu thuật đục thủy tinh thể xong hồi phục mất bao lâu
